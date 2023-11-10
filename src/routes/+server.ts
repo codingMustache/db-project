@@ -1,6 +1,8 @@
 import { json } from '@sveltejs/kit';
 import { Users } from '$db/users.model';
 
+
+// setting up the api endpoint for deleting
 export const DELETE = async ({ request }) => {
 	const id = await request.json();
 	const response = await Users.deleteOne({ _id: id })

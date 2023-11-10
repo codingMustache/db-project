@@ -1,6 +1,8 @@
 import { Users } from '$db/users.model';
 import type { PageServerLoad, Actions } from './$types';
 
+
+// load function does a get on the DB
 export const load: PageServerLoad = (async () => {
 	const users: any = (await Users.find({}, 'name age')).map((doc) => {
 		const { _id, ...rest } = doc.toObject();
@@ -12,6 +14,8 @@ export const load: PageServerLoad = (async () => {
 	};
 }) satisfies PageServerLoad;
 
+
+// using form action to add users from the form
 export const actions = {
 	addUser: async ({ request }) => {
 		const data = await request.formData();
