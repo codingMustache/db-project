@@ -57,6 +57,7 @@
 	.user button {
 		height: 20px;
 		width: 20px;
+		padding: 3px;
 		justify-self: end;
 	}
 </style>
